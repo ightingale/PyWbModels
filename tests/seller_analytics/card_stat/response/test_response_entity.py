@@ -1,5 +1,6 @@
 from adaptix import Retort, name_mapping, NameStyle
 
+from pywbmodels.common.retort import main_retort
 from pywbmodels.seller_analytics.card_stat.response.entity import CardStatResponse
 from pywbmodels.seller_analytics.card_stat.response.value_objects import CardData, ObjectData, Statistics, PeriodData, \
     Conversions, PeriodComparison, Stocks
@@ -80,19 +81,7 @@ def test_card_stat_response():
         ]
     )
 
-    retort = Retort(
-        recipe=[
-            name_mapping(
-                name_style=NameStyle.CAMEL,
-            ),
-            name_mapping(
-                CardData,
-                map={
-                    "nm_id": "nmID",
-                }
-            )
-        ],
-    )
+    retort = main_retort
 
     data = {
         "cards": [

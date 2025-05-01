@@ -10,11 +10,6 @@ class CardStatPeriod:
     begin: datetime
     end: datetime
 
-    # @field_serializer("begin", "end")
-    # @classmethod
-    # def serialize_datetime(cls, value: datetime) -> str:
-    #     return value.isoformat(sep=" ")
-
 
 @dataclass
 class CardStatOrderBy:

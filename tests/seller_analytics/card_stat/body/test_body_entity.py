@@ -1,12 +1,10 @@
 from datetime import datetime
 
-from adaptix import Retort, name_mapping, NameStyle, dumper
-
 from pywbmodels.common.enums import OrderMode
+from pywbmodels.common.retort import main_retort
 from pywbmodels.seller_analytics.card_stat.body.entity import CardStatBody
 from pywbmodels.seller_analytics.card_stat.body.enums import CardStatOrderByField
 from pywbmodels.seller_analytics.card_stat.body.value_objects import CardStatPeriod, CardStatOrderBy
-from pywbmodels.seller_analytics.card_stat.response.value_objects import CardData
 
 
 def test_card_stat_body():
@@ -22,20 +20,7 @@ def test_card_stat_body():
         page=1,
     )
 
-    retort = Retort(
-        recipe=[
-            name_mapping(
-                name_style=NameStyle.CAMEL,
-            ),
-            name_mapping(
-                CardData,
-                map={
-                    "nm_id": "nmID",
-                }
-            ),
-            dumper(datetime, lambda x: x.isoformat(sep=" "))
-        ],
-    )
+    retort = main_retort
 
     data = {
         "period": {
