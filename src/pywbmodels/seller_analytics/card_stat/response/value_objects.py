@@ -70,3 +70,5 @@ class CardData:
 @dataclass
 class CardStatData:
     cards: list[CardData]
+    page: int
+    is_next_page: bool
