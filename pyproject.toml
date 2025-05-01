@@ -1,0 +1,13 @@
+[project]
+name = "pywbmodels"
+version = "0.1.0"
+description = "Python Wildberries Seller API Models"
+requires-python = ">=3.12"
+dependencies = [
+    "pydantic>=2.11.3",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.5",
+]

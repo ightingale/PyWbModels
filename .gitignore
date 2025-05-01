@@ -1,0 +1,7 @@
+config.toml
+.venv
+.idea
+__pycache__
+docker-compose.yml
+*.egg-info
+/uv.lock
