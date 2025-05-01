@@ -65,3 +65,8 @@ class CardData:
     object: ObjectData
     statistics: Statistics
     stocks: Stocks
+
+
+@dataclass
+class CardStatData:
+    cards: list[CardData]
