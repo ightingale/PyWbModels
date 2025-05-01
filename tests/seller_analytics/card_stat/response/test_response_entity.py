@@ -1,3 +1,5 @@
+from adaptix import Retort, name_mapping, NameStyle
+
 from pywbmodels.seller_analytics.card_stat.response.entity import CardStatResponse
 from pywbmodels.seller_analytics.card_stat.response.value_objects import CardData, ObjectData, Statistics, PeriodData, \
     Conversions, PeriodComparison, Stocks
@@ -78,7 +80,21 @@ def test_card_stat_response():
         ]
     )
 
-    assert model.model_dump() == {
+    retort = Retort(
+        recipe=[
+            name_mapping(
+                name_style=NameStyle.CAMEL,
+            ),
+            name_mapping(
+                CardData,
+                map={
+                    "nm_id": "nmID",
+                }
+            )
+        ],
+    )
+
+    data = {
         "cards": [
             {
                 "nmID": 12345678,
@@ -150,3 +166,6 @@ def test_card_stat_response():
             }
         ]
     }
+
+    assert retort.dump(model) == data
+    assert retort.load(data, CardStatResponse) == model

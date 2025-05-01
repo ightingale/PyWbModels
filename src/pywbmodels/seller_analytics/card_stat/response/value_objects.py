@@ -1,4 +1,4 @@
-from dataclasses import dataclass, Field
+from dataclasses import dataclass
 
 
 @dataclass
@@ -12,44 +12,44 @@ class Conversions:
 class PeriodData:
     begin: str
     end: str
-    open_card_count: int = Field(..., alias="openCardCount")
-    add_to_cart_count: int = Field(..., alias="addToCartCount")
-    orders_count: int = Field(..., alias="ordersCount")
-    orders_sum_rub: int = Field(..., alias="ordersSumRub")
-    buyouts_count: int = Field(..., alias="buyoutsCount")
-    buyouts_sum_rub: int = Field(..., alias="buyoutsSumRub")
-    cancel_count: int = Field(..., alias="cancelCount")
-    cancel_sum_rub: int = Field(..., alias="cancelSumRub")
-    avg_orders_count_per_day: int | float = Field(..., alias="avgOrdersCountPerDay")
-    avg_price_rub: int = Field(..., alias="avgPriceRub")
+    open_card_count: int
+    add_to_cart_count: int
+    orders_count: int
+    orders_sum_rub: int
+    buyouts_count: int
+    buyouts_sum_rub: int
+    cancel_count: int
+    cancel_sum_rub: int
+    avg_orders_count_per_day: int | float
+    avg_price_rub: int
     conversions: Conversions
 
 
 @dataclass
 class PeriodComparison:
-    open_card_dynamics: int = Field(..., alias="openCardDynamics")
-    add_to_cart_dynamics: int = Field(..., alias="addToCartDynamics")
-    orders_count_dynamics: int = Field(..., alias="ordersCountDynamics")
-    orders_sum_rub_dynamics: int = Field(..., alias="ordersSumRubDynamics")
-    buyouts_count_dynamics: int = Field(..., alias="buyoutsCountDynamics")
-    buyouts_sum_rub_dynamics: int = Field(..., alias="buyoutsSumRubDynamics")
-    cancel_count_dynamics: int = Field(..., alias="cancelCountDynamics")
-    cancel_sum_rub_dynamics: int = Field(..., alias="cancelSumRubDynamics")
-    avg_orders_count_per_day_dynamics: int = Field(..., alias="avgOrdersCountPerDayDynamics")
-    avg_price_rub_dynamics: int = Field(..., alias="avgPriceRubDynamics")
+    open_card_dynamics: int
+    add_to_cart_dynamics: int
+    orders_count_dynamics: int
+    orders_sum_rub_dynamics: int
+    buyouts_count_dynamics: int
+    buyouts_sum_rub_dynamics: int
+    cancel_count_dynamics: int
+    cancel_sum_rub_dynamics: int
+    avg_orders_count_per_day_dynamics: int
+    avg_price_rub_dynamics: int
     conversions: Conversions
 
 
 @dataclass
 class Statistics:
-    selected_period: PeriodData = Field(..., alias="selectedPeriod")
-    previous_period: PeriodData = Field(..., alias="previousPeriod")
-    period_comparison: PeriodComparison = Field(..., alias="periodComparison")
+    selected_period: PeriodData
+    previous_period: PeriodData
+    period_comparison: PeriodComparison
 
 
 @dataclass
 class Stocks:
-    stocks_wb: int | None = Field(..., alias="stocksWb")
+    stocks_wb: int | None
 
 
 @dataclass
@@ -59,9 +59,9 @@ class ObjectData:
 
 @dataclass
 class CardData:
-    nm_id: int = Field(..., alias="nmID")
-    vendor_code: str = Field(..., alias="vendorCode")
-    brand_name: str = Field(..., alias="brandName")
+    nm_id: int
+    vendor_code: str
+    brand_name: str
     object: ObjectData
     statistics: Statistics
     stocks: Stocks

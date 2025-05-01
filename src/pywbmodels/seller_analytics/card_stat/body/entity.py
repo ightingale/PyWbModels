@@ -1,11 +1,10 @@
-from pydantic import BaseModel, Field, ConfigDict
+from dataclasses import dataclass
 
 from pywbmodels.seller_analytics.card_stat.body.value_objects import CardStatPeriod, CardStatOrderBy
 
 
-class CardStatBody(BaseModel):
+@dataclass
+class CardStatBody:
     period: CardStatPeriod
-    order_by: CardStatOrderBy = Field(..., serialization_alias="orderBy")
+    order_by: CardStatOrderBy
     page: int
-
-    model_config = ConfigDict(serialize_by_alias=True)
