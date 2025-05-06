@@ -2,6 +2,7 @@ from adaptix import Retort, name_mapping, NameStyle, dumper, P
 
 from pywbmodels.advert.fullstats.response.entity import FullStatResponse
 from pywbmodels.advert.fullstats.response.value_objects import BoosterStats, FullStatDay
+from pywbmodels.advert.info.response.value_objects import AutoParams
 from pywbmodels.common.value_objects import Period
 from pywbmodels.seller_analytics.card_stat.response.value_objects import CardData
 
@@ -23,6 +24,10 @@ main_retort = Retort(
         name_mapping(
             CardData,
             map={"nm_id": "nmID"}
+        ),
+        name_mapping(
+            AutoParams,
+            map={"nm_cpm": "nmCPM"}
         ),
         dumper(
             P[Period].begin |
