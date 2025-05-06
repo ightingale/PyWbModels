@@ -2,6 +2,7 @@ from enum import Enum
 
 
 class AdvertStatus(Enum):
+    DELETING_IN_PROGRESS = -1
     READY_TO_LAUNCH = 4
     CAMPAIGN_COMPLETED = 7
     DECLINED = 8
@@ -10,5 +11,9 @@ class AdvertStatus(Enum):
 
 
 class AdvertType(Enum):
+    LEGACY_CATALOG = 4
+    LEGACY_PRODUCT_CARD = 5
+    LEGACY_SEARCH = 6
+    LEGACY_HOME_RECOMMENDATIONS = 7
     AUTOMATIC_CAMPAIGN = 8
     AUCTION = 9
