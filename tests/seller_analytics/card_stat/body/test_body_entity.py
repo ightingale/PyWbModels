@@ -4,12 +4,13 @@ from pywbmodels.common.enums import OrderMode
 from pywbmodels.common.retort import main_retort
 from pywbmodels.seller_analytics.card_stat.body.entity import CardStatBody
 from pywbmodels.seller_analytics.card_stat.body.enums import CardStatOrderByField
-from pywbmodels.seller_analytics.card_stat.body.value_objects import CardStatPeriod, CardStatOrderBy
+from pywbmodels.seller_analytics.card_stat.body.value_objects import CardStatOrderBy
+from pywbmodels.common.value_objects import Period
 
 
 def test_card_stat_body():
     model = CardStatBody(
-        period=CardStatPeriod(
+        period=Period(
             begin=datetime(2025, 4, 28, 0, 0, 0),
             end=datetime(2025, 4, 28, 23, 59, 59),
         ),

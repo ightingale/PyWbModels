@@ -4,7 +4,6 @@ from pywbmodels.seller_analytics.card_stat.response.value_objects import CardDat
     Conversions, PeriodComparison, Stocks, CardStatData
 
 
-# noinspection PyArgumentList
 def test_card_stat_response():
     model = CardStatResponse(
         data=CardStatData(
@@ -77,7 +76,9 @@ def test_card_stat_response():
                         stocks_wb=350
                     )
                 )
-            ]
+            ],
+            page=1,
+            is_next_page=False
         )
     )
 
@@ -154,7 +155,9 @@ def test_card_stat_response():
                         "stocksWb": 350
                     },
                 }
-            ]
+            ],
+            "page": 1,
+            "isNextPage": False
         }
     }
 
