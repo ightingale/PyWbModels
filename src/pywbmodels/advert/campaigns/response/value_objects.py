@@ -1,5 +1,7 @@
 from dataclasses import dataclass
 
+from pywbmodels.advert.info.response.enums import AdvertType, AdvertStatus
+
 
 @dataclass
 class RawAdvertListItem:
@@ -9,7 +11,7 @@ class RawAdvertListItem:
 
 @dataclass
 class RawAdvert:
-    type: int
-    status: int
+    type: AdvertType
+    status: AdvertStatus
     count: int
     advert_list: list[RawAdvertListItem]

@@ -1,5 +1,6 @@
 from adaptix import Retort, name_mapping, NameStyle, dumper, P
 
+from pywbmodels.advert.campaigns.response.value_objects import RawAdvert
 from pywbmodels.advert.fullstats.response.entity import FullStatResponse
 from pywbmodels.advert.fullstats.response.value_objects import BoosterStats, FullStatDay
 from pywbmodels.advert.info.response.value_objects import AutoParams
@@ -19,6 +20,10 @@ main_retort = Retort(
         name_mapping(
             FullStatResponse,
             map={"sum_price": "sum_price"},
+        ),
+        name_mapping(
+            RawAdvert,
+            map={"advert_list": "advert_list"},
         ),
         name_mapping(name_style=NameStyle.CAMEL),
         name_mapping(
