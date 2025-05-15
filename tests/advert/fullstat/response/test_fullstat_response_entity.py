@@ -1,3 +1,5 @@
+import json
+
 from pywbmodels.advert.fullstats.response.entity import FullStatResponse
 from pywbmodels.common.retort import main_retort
 
@@ -77,4 +79,13 @@ def test_card_stat_response():
         ],
         "advertId": 10524818
     }
+    assert retort.load(data, FullStatResponse)
+
+
+def test_card_stat_response_with_real_data():
+    retort = main_retort
+
+    with open("full_stat_response.json", encoding="utf-8") as file:
+        data = json.load(file)
+
     assert retort.load(data, FullStatResponse)

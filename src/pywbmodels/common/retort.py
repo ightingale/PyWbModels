@@ -25,7 +25,7 @@ main_retort = Retort(
             RawAdvert,
             map={"advert_list": "advert_list"},
         ),
-        name_mapping(name_style=NameStyle.CAMEL),
+        name_mapping(name_style=NameStyle.CAMEL, omit_default=True),
         name_mapping(
             CardData,
             map={"nm_id": "nmID"}

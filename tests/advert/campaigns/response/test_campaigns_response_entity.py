@@ -1,3 +1,5 @@
+import json
+
 from pywbmodels.advert.campaigns.response.entity import AdvertCampaignsResponse
 from pywbmodels.advert.campaigns.response.value_objects import RawAdvert, RawAdvertListItem
 from pywbmodels.advert.info.response.enums import AdvertType, AdvertStatus
@@ -58,3 +60,12 @@ def test_card_stat_response():
     }
 
     assert retort.load(data, AdvertCampaignsResponse) == model
+
+
+def test_card_stat_response_with_real_data():
+    retort = main_retort
+
+    with open("card_stat_response.json") as file:
+        data = json.load(file)
+
+    assert retort.load(data, AdvertCampaignsResponse)

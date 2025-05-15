@@ -1,5 +1,7 @@
 from dataclasses import dataclass
 
+from adaptix import Omitted
+
 from pywbmodels.advert.fullstats.response.value_objects import FullStatDay, BoosterStats
 
 
@@ -17,5 +19,5 @@ class FullStatResponse:
     sum_price: float
     dates: list[str]
     days: list[FullStatDay]
-    booster_stats: list[BoosterStats]
     advert_id: int
+    booster_stats: list[BoosterStats] = Omitted()
