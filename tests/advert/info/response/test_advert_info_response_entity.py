@@ -84,4 +84,3 @@ def test_advert_info_response():
     }
 
     assert retort.load(data, AdvertInfoResponse) == model
-
