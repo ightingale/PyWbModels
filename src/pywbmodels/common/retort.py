@@ -6,6 +6,7 @@ from pywbmodels.advert.fullstats.response.value_objects import BoosterStats, Ful
 from pywbmodels.advert.info.response.value_objects import AutoParams
 from pywbmodels.common.value_objects import Period
 from pywbmodels.seller_analytics.card_stat.response.value_objects import CardData
+from pywbmodels.statistics.sales.response.entity import Sale
 
 main_retort = Retort(
     recipe=[
@@ -33,6 +34,10 @@ main_retort = Retort(
         name_mapping(
             AutoParams,
             map={"nm_cpm": "nmCPM"}
+        ),
+        name_mapping(
+            Sale,
+            map={"sale_id": "saleID", "income_id": "incomeID"}
         ),
         dumper(
             P[Period].begin |
