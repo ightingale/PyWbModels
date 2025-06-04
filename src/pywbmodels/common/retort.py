@@ -5,6 +5,8 @@ from pywbmodels.advert.fullstats.response.entity import FullStatResponse
 from pywbmodels.advert.fullstats.response.value_objects import BoosterStats, FullStatDay
 from pywbmodels.advert.info.response.value_objects import AutoParams
 from pywbmodels.common.value_objects import Period
+from pywbmodels.content.cards.body.value_objects import Cursor
+from pywbmodels.content.cards.response.entity import Size, Card
 from pywbmodels.seller_analytics.card_stat.response.value_objects import CardData
 from pywbmodels.statistics.sales.response.entity import Sale
 
@@ -34,6 +36,23 @@ main_retort = Retort(
         name_mapping(
             AutoParams,
             map={"nm_cpm": "nmCPM"}
+        ),
+        name_mapping(
+            Size,
+            map={"chrt_id": "chrtID"}
+        ),
+        name_mapping(
+            Card,
+            map={
+                "nm_id": "nmID",
+                "imt_id": "imtID",
+                "nm_uuid": "nmUUID",
+                "subject_id": "subjectID",
+            }
+        ),
+        name_mapping(
+            Cursor,
+            map={"nm_id": "nmID"}
         ),
         name_mapping(
             Sale,
