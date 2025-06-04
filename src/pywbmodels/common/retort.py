@@ -7,6 +7,7 @@ from pywbmodels.advert.info.response.value_objects import AutoParams
 from pywbmodels.common.value_objects import Period
 from pywbmodels.content.cards.body.value_objects import Cursor
 from pywbmodels.content.cards.response.entity import Size, Card
+from pywbmodels.content.cards.response.value_objects import ResponseCursor
 from pywbmodels.seller_analytics.card_stat.response.value_objects import CardData
 from pywbmodels.statistics.sales.response.entity import Sale
 
@@ -52,6 +53,10 @@ main_retort = Retort(
         ),
         name_mapping(
             Cursor,
+            map={"nm_id": "nmID"}
+        ),
+        name_mapping(
+            ResponseCursor,
             map={"nm_id": "nmID"}
         ),
         name_mapping(
