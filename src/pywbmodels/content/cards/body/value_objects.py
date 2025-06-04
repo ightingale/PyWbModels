@@ -21,9 +21,9 @@ class Filter:
 @dataclass
 class Cursor:
     limit: int
-    updated_at: datetime
-    nm_id: int
-    total: int
+    updated_at: datetime | None = None
+    nm_id: int | None = None
+    total: int | None = None
 
 
 @dataclass
