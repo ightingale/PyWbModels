@@ -1,3 +1,4 @@
+import datetime
 from dataclasses import dataclass
 
 
@@ -20,6 +21,9 @@ class Filter:
 @dataclass
 class Cursor:
     limit: int
+    updated_at: datetime
+    nm_id: int
+    total: int
 
 
 @dataclass

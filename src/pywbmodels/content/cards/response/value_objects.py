@@ -59,10 +59,3 @@ class Card:
     tags: list[Tag] | None = None
     created_at: datetime | None = None
     updated_at: datetime | None = None
-
-
-@dataclass
-class ResponseCursor:
-    updated_at: datetime
-    nm_id: int
-    total: int
