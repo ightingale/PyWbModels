@@ -9,6 +9,7 @@ from pywbmodels.content.cards.body.value_objects import Cursor
 from pywbmodels.content.cards.response.entity import Card
 from pywbmodels.content.cards.response.value_objects import Size
 from pywbmodels.seller_analytics.card_stat.response.value_objects import CardData
+from pywbmodels.statistics.orders.response.entity import Order
 from pywbmodels.statistics.sales.response.entity import Sale
 
 main_retort = Retort(
@@ -58,6 +59,10 @@ main_retort = Retort(
         name_mapping(
             Sale,
             map={"sale_id": "saleID", "income_id": "incomeID"}
+        ),
+        name_mapping(
+            Order,
+            map={"income_id": "incomeID"}
         ),
         dumper(
             P[Period].begin |
