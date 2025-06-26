@@ -2,6 +2,8 @@
 from dataclasses import dataclass
 from datetime import datetime
 
+from adaptix import Omitted
+
 
 @dataclass
 class Sort:
@@ -21,10 +23,10 @@ class Filter:
 
 @dataclass
 class Cursor:
-    limit: int
     updated_at: datetime | None = None
     nm_id: int | None = None
     total: int | None = None
+    limit: int = Omitted()
 
 
 @dataclass
