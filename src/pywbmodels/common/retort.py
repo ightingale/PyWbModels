@@ -3,7 +3,7 @@ from adaptix import Retort, name_mapping, NameStyle, dumper, P
 from pywbmodels.advert.campaigns.response.value_objects import RawAdvert
 from pywbmodels.advert.fullstats.response.entity import FullStatResponse
 from pywbmodels.advert.fullstats.response.value_objects import BoosterStats, FullStatDay
-from pywbmodels.advert.info.response.value_objects import AutoParams
+from pywbmodels.advert.info.response.value_objects import AutoParams, UnitedParams
 from pywbmodels.common.value_objects import Period
 from pywbmodels.content.cards.body.value_objects import Cursor
 from pywbmodels.content.cards.response.entity import Card
@@ -63,6 +63,13 @@ main_retort = Retort(
         name_mapping(
             Order,
             map={"income_id": "incomeID"}
+        ),
+        name_mapping(
+            UnitedParams,
+            map={
+                "search_cpm": "searchCPM",
+                "catalog_cpm": "catalogCPM",
+            }
         ),
         dumper(
             P[Period].begin |
