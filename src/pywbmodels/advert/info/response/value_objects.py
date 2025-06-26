@@ -1,5 +1,7 @@
 from dataclasses import dataclass
 
+from adaptix import Omitted
+
 
 @dataclass
 class Nm:
@@ -42,8 +44,9 @@ class NmCpm:
 
 @dataclass
 class AutoParams:
+    cpm: int
     nm_cpm: list[NmCpm]
     subject: Subject
-    sets: list[Subject]
     nms: list[int]
     active: Active
+    sets: list[Subject] = Omitted()
