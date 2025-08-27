@@ -5,5 +5,5 @@ from pywbmodels.advert.campaigns.response.value_objects import RawAdvert
 
 @dataclass
 class AdvertCampaignsResponse:
-    adverts: list[RawAdvert]
+    adverts: list[RawAdvert] | None
     all: int
